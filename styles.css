@@ -1,9 +1,38 @@
 body {
-  background-color: white;
-  color: black;
+  background-color: hsl(0, 0%, 99%);
+  color: hsl(200, 15%, 8%)
 }
 
 .dark-mode {
-  background-color: black;
-  color: white;
+  background-color: hsl(207, 26%, 17%);
+  color: hsl(0, 100%, 100%)
+}
+
+.dark-mode section {
+  background-color: hsl(209, 23%, 22%);
+}
+
+ion-icon {
+  --ionicon-stroke-width: 16px;
+}
+
+#container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem 0;
+  gap: 20px;
+  flex-direction: row;
+  order: 4;
+  flex-wrap: wrap;
+}
+
+#countries section {
+    width: calc(25% - 20px);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
