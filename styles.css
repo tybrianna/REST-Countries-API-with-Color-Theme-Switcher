@@ -1,38 +1,139 @@
+* {
+    box-sizing: border-box;
+}
+
+.page {
+    max-width: 1200px;
+    margin: 20px 20px;
+    padding: 20px 20px;
+}
+
 body {
-  background-color: hsl(0, 0%, 99%);
-  color: hsl(200, 15%, 8%)
+    margin: 0;
+    background-color: hsl(0, 0%, 99%);
+    color: hsl(200, 15%, 8%);
+    padding: 0 40px;
 }
 
 .dark-mode {
-  background-color: hsl(207, 26%, 17%);
-  color: hsl(0, 100%, 100%)
+    background-color: hsl(207, 26%, 17%);
+    color: hsl(0, 100%, 100%)
 }
 
 .dark-mode section {
-  background-color: hsl(209, 23%, 22%);
+    background-color: hsl(209, 23%, 22%);
+    color: hsl(0, 100%, 100%);
+}
+
+.dark-mode header {
+    background-color: hsl(209, 23%, 22%);
+    color: hsl(0, 100%, 100%);
+}
+
+.dark-mode #container {
+    background-color: transparent;
+}
+
+.dark-mode nav {
+    color: hsl(0, 100%, 100%);
 }
 
 ion-icon {
-  --ionicon-stroke-width: 16px;
+    --ionicon-stroke-width: 16px;
 }
 
 #container {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 1rem 0;
-  gap: 20px;
-  flex-direction: row;
-  order: 4;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: transparent;
 }
 
-#countries section {
-    width: calc(25% - 20px);
+#container section {
+    flex: 0 0 calc((100% - 60px) / 4);
+    border-radius: 12px;
+    padding: 12px;
+
+    background-color: hsl(0, 100%, 100%);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 20px auto 10px auto;
+
+    background-color: hsl(0, 100%, 100%);
+    padding: 15px 20px;
+    border-radius: 10px;
+
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    white-space: nowrap;
+}
+
+#container img {
+    width: 100%;
+    height: auto;
+}
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#nav {
+    margin-top: 20px;
+    margin: 0 auto 20px auto;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#searchInput {
+    padding: 8px;
+    width: 250px;
+}
+
+#region {
+    padding: 8px;
+}
+
+@media (max-width: 900px) {
+    #container section {
+        flex: 0 0 calc(50% - 20px);
+        /* 2 per row */
+    }
+}
+
+@media (max-width: 500px) {
+    #container section {
+        flex: 0 0 100%;
+        /* 1 per row */
+    }
+}
+
+@media (max-width: 600px) {
+    #nav {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    #search input {
+        width: 100%;
+    }
+
+    #dropdown {
+        width: 100%;
+    }
+
+    #region {
+        width: 100%;
+    }
 }

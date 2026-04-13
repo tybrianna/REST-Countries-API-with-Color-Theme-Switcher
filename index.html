@@ -13,19 +13,22 @@
 
 <body>
     <header id="header">
-        <h1 id="header">Where in the world?</h1>
-        <ion-icon name="moon-outline"></ion-icon>
-        <button id="switch">Dark Mode</button>
+        <h1>Where in the world?</h1>
+
+        <div class="theme-toggle">
+            <ion-icon name="moon-outline"></ion-icon>
+            <button id="switch">Dark Mode</button>
+        </div>
     </header>
 
     <nav id="nav">
         <div id="search">
-            <input type="text" placeholder="Search for a country ..">
+            <input id="searchInput" type="text" placeholder="Search for a country ..">
         </div>
 
         <div id="dropdown">
             <select id="region">
-                <option value="" disabled selected>Filter by Region</option>
+                <option value="">Filter by Region</option>
                 <option value="Africa">Africa</option>
                 <option value="Americas">Americas</option>
                 <option value="Asia">Asia</option>
@@ -35,71 +38,71 @@
         </div>
     </nav>
 
-        <div id="container">
-            <section id="Germany">
-                <img src="images/germany.png" alt="Germany Flag">
-                <p>Germany</p>
-                <p>Population: 81,770,900</p>
-                <p>Region: Europe</p>
-                <p>Capital: Berlin</p>
-            </section>
+    <div id="container">
+        <section id="Germany">
+            <img src="images/germany.png" alt="Germany Flag">
+            <p>Germany</p>
+            <p>Population: 81,770,900</p>
+            <p>Region: Europe</p>
+            <p>Capital: Berlin</p>
+        </section>
 
-            <section id="USA">
-                <img src="images/usa.png" alt="USA Flag">
-                <p>United States of America</p>
-                <p>Population: 323,947,000</p>
-                <p>Region: Americas</p>
-                <p>Capital: Washington, D.C.</p>
-            </section>
+        <section id="USA">
+            <img src="images/usa.png" alt="USA Flag">
+            <p>United States of America</p>
+            <p>Population: 323,947,000</p>
+            <p>Region: Americas</p>
+            <p>Capital: Washington, D.C.</p>
+        </section>
 
-            <section id="Brazil">
-                <img src="images/brazil.png" alt="Brazil Flag">
-                <p>Brazil</p>
-                <p>Population: 206,135,893</p>
-                <p>Region: Brazil</p>
-                <p>Capital: Brasília</p>
-            </section>
+        <section id="Brazil">
+            <img src="images/brazil.png" alt="Brazil Flag">
+            <p>Brazil</p>
+            <p>Population: 206,135,893</p>
+            <p>Region: Americas</p>
+            <p>Capital: Brasília</p>
+        </section>
 
-            <section id="Iceland">
-                <img src="images/iceland.png" alt="Iceland Flag">
-                <p>Iceland</p>
-                <p>Population: 334,300</p>
-                <p>Region: Europe</p>
-                <p>Capital: Reykjavik</p>
-            </section>
+        <section id="Iceland">
+            <img src="images/iceland.png" alt="Iceland Flag">
+            <p>Iceland</p>
+            <p>Population: 334,300</p>
+            <p>Region: Europe</p>
+            <p>Capital: Reykjavik</p>
+        </section>
 
-            <section id="Afghanistan">
-                <img src="images/afghanistan.png" alt="Afghanistan Flag">
-                <p>Afghanistan</p>
-                <p>Population: 27,657,145</p>
-                <p>Region: Asia</p>
-                <p>Capital: Kabul</p>
-            </section>
+        <section id="Afghanistan">
+            <img src="images/afghanistan.png" alt="Afghanistan Flag">
+            <p>Afghanistan</p>
+            <p>Population: 27,657,145</p>
+            <p>Region: Asia</p>
+            <p>Capital: Kabul</p>
+        </section>
 
-            <section id="Aland Islands">
-                <img src="images/aland.png" alt="Aland Islands Flag">
-                <p>Aland Islands</p>
-                <p>Population: 28,875</p>
-                <p>Region: Europe</p>
-                <p>Capital: Mariehamn</p>
-            </section>
+        <section id="Aland Islands">
+            <img src="images/aland.png" alt="Aland Islands Flag">
+            <p>Aland Islands</p>
+            <p>Population: 28,875</p>
+            <p>Region: Europe</p>
+            <p>Capital: Mariehamn</p>
+        </section>
 
-            <section id="Albania">
-                <img src="images/albania.png" alt="Albania Flag">
-                <p>Albania</p>
-                <p>Population: 2,886,026</p>
-                <p>Region: Europe</p>
-                <p>Capital: Tirana</p>
-            </section>
+        <section id="Albania">
+            <img src="images/albania.png" alt="Albania Flag">
+            <p>Albania</p>
+            <p>Population: 2,886,026</p>
+            <p>Region: Europe</p>
+            <p>Capital: Tirana</p>
+        </section>
 
-            <section id="Algeria">
-                <img src="images/algeria.png" alt="Algeria Flag">
-                <p>Algeria</p>
-                <p>Population: 40,400,000</p>
-                <p>Region: Africa</p>
-                <p>Capital: Algiers</p>
-            </section>
-        </div>
+        <section id="Algeria">
+            <img src="images/algeria.png" alt="Algeria Flag">
+            <p>Algeria</p>
+            <p>Population: 40,400,000</p>
+            <p>Region: Africa</p>
+            <p>Capital: Algiers</p>
+        </section>
+    </div>
 </body>
 
 </html>

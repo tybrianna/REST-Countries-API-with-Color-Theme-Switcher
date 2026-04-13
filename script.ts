@@ -1,14 +1,20 @@
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "dark") {
+  document.body.classList.add("dark-mode");
+}
+
 const button = document.getElementById("switch");
 
 if (button) {
   button.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
+    document.body.classList.toggle("dark-mode");
 
-  if (document.body.classList.contains("dark-mode")) {
-    localStorage.setItem("theme", "dark");
-  } else {
-    localStorage.setItem("theme", "light");
-  }
+    if (document.body.classList.contains("dark-mode")) {
+      localStorage.setItem("theme", "dark");
+    } else {
+      localStorage.setItem("theme", "light");
+    }
   });
 }
 
@@ -25,8 +31,8 @@ type Country = {
 };
 
 
-const countriesContainer = document.getElementById("countries") as HTMLElement;
-const searchInput = document.getElementById("search") as HTMLInputElement;
+const countriesContainer = document.getElementById("container") as HTMLElement;
+const searchInput = document.getElementById("searchInput") as HTMLInputElement;
 const regionFilter = document.getElementById("region") as HTMLSelectElement;
 
 let allCountries: Country[] = [];
@@ -63,30 +69,27 @@ function displayCountries(countries: Country[]): void {
   });
 }
 
-// Search
-searchInput.addEventListener("input", () => {
-  const value = searchInput.value.toLowerCase();
+fetchCountries();
 
-  const filtered = allCountries.filter((country) =>
-    country.name.common.toLowerCase().includes(value)
-  );
+// Filter countries
+function filterCountries(): void {
+  const searchValue = searchInput.value.toLowerCase();
+  const regionValue = regionFilter.value;
+
+  const filtered = allCountries.filter((country) => {
+    const matchesSearch = country.name.common
+      .toLowerCase()
+      .includes(searchValue);
+
+    const matchesRegion = regionValue
+      ? country.region === regionValue
+      : true;
+
+    return matchesSearch && matchesRegion;
+  });
 
   displayCountries(filtered);
-});
+}
 
-// Filter
-regionFilter.addEventListener("change", () => {
-  const region = regionFilter.value;
-
-  if (!region) {
-    displayCountries(allCountries);
-  } else {
-    const filtered = allCountries.filter(
-      (country) => country.region === region
-    );
-
-    displayCountries(filtered);
-  }
-});
-
-fetchCountries();
+searchInput.addEventListener("input", () => filterCountries());
+regionFilter.addEventListener("change", () => filterCountries());
